@@ -1,0 +1,1552 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Afirza Lucky Pradana</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(-45deg, #667eea, #764ba2, #f093fb, #f5576c);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+        }
+        
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .float-animation {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+        
+        .fade-in.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .slide-in-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: all 0.8s ease;
+        }
+        
+        .slide-in-left.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .slide-in-right {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: all 0.8s ease;
+        }
+        
+        .slide-in-right.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .scale-in {
+            opacity: 0;
+            transform: scale(0.8);
+            transition: all 0.6s ease;
+        }
+        
+        .scale-in.active {
+            opacity: 1;
+            transform: scale(1);
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .typing::after {
+            content: '|';
+            animation: blink 1s infinite;
+        }
+        
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+        
+        .progress-bar {
+            width: 0%;
+            transition: width 1.5s ease-in-out;
+        }
+        
+        .navbar-scroll {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .glassmorphism {
+            backdrop-filter: blur(16px) saturate(180%);
+            background-color: rgba(255, 255, 255, 0.75);
+            border: 1px solid rgba(209, 213, 219, 0.3);
+        }
+
+        .nav-link {
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: #9333ea;
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            transform: translateY(0);
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+        }
+
+        .skill-item {
+            margin-bottom: 2rem;
+        }
+
+        .portfolio-card {
+            border-radius: 20px;
+            overflow: hidden;
+            background: white;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .portfolio-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+        }
+
+        .tech-icon {
+            transition: all 0.3s ease;
+        }
+
+        .tech-icon:hover {
+            transform: scale(1.1) rotate(5deg);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 transition-all duration-500 py-4" id="navbar">
+        <div class="container mx-auto px-6">
+            <div class="flex justify-between items-center">
+                <div class="text-2xl font-bold text-gray-800">
+                    <span class="text-purple-600">A</span>firza Lucky Pradana
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="nav-link text-gray-700 hover:text-purple-600 font-medium transition-colors duration-300">Home</a>
+                    <a href="#about" class="nav-link text-gray-700 hover:text-purple-600 font-medium transition-colors duration-300">About</a>
+                    <a href="#skills" class="nav-link text-gray-700 hover:text-purple-600 font-medium transition-colors duration-300">Skills</a>
+                    <a href="#portfolio" class="nav-link text-gray-700 hover:text-purple-600 font-medium transition-colors duration-300">Portfolio</a>
+                    <a href="#contact" class="nav-link text-gray-700 hover:text-purple-600 font-medium transition-colors duration-300">Contact</a>
+                </div>
+                <button class="md:hidden text-gray-600 hover:text-purple-600 transition-colors" id="mobile-menu-btn">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="fixed inset-0 z-40 hidden bg-white" id="mobile-menu">
+        <div class="h-full pt-20 px-6">
+            <a href="#home" class="block py-4 text-gray-700 font-medium mobile-nav-link hover:text-purple-600 transition-colors">Home</a>
+            <a href="#about" class="block py-4 text-gray-700 font-medium mobile-nav-link hover:text-purple-600 transition-colors">About</a>
+            <a href="#skills" class="block py-4 text-gray-700 font-medium mobile-nav-link hover:text-purple-600 transition-colors">Skills</a>
+            <a href="#portfolio" class="block py-4 text-gray-700 font-medium mobile-nav-link hover:text-purple-600 transition-colors">Portfolio</a>
+            <a href="#contact" class="block py-4 text-gray-700 font-medium mobile-nav-link hover:text-purple-600 transition-colors">Contact</a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen gradient-bg flex items-center justify-center relative overflow-hidden">
+        <div class="absolute inset-0 bg-black opacity-20"></div>
+        
+        <!-- Floating Elements -->
+        <div class="absolute top-20 left-10 float-animation">
+            <div class="w-20 h-20 bg-white opacity-10 rounded-full"></div>
+        </div>
+        <div class="absolute bottom-20 right-10 float-animation" style="animation-delay: -3s;">
+            <div class="w-32 h-32 bg-white opacity-5 rounded-full"></div>
+        </div>
+        <div class="absolute top-1/2 left-1/4 float-animation" style="animation-delay: -1s;">
+            <div class="w-16 h-16 bg-white opacity-10 rounded-full"></div>
+        </div>
+        
+        <div class="container mx-auto px-6 text-center relative z-10">
+            <div class="text-white fade-in max-w-4xl mx-auto">
+                <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+                    Hello, I'm <br><span class="typing text-gradient" id="typed-name">Afirza Lucky Pradana</span>
+                </h1>
+                <p class="text-xl md:text-2xl mb-12 opacity-90 leading-relaxed">
+                    Web Developer • Software Engineer • Full Stack Developer
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <a href="#portfolio" class="btn-primary text-white px-8 py-4 rounded-full font-semibold inline-flex items-center gap-3 shadow-lg">
+                        <i class="fas fa-briefcase"></i>
+                        View My Work
+                    </a>
+                    <button onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });" 
+                        class="border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-purple-600 transform hover:scale-105 transition-all duration-300 inline-flex items-center gap-3">
+                        <i class="fas fa-envelope"></i>
+                        Contact Me
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-800 fade-in mb-4">About Me</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto fade-in"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-16 items-center max-w-6xl mx-auto">
+                <div class="slide-in-left text-center md:text-left">
+                    <div class="relative inline-block">
+                        <div class="bg-gradient-to-br from-purple-400 to-pink-400 p-1 rounded-3xl">
+                            <div class="w-80 h-80 md:w-96 md:h-96 bg-gray-200 rounded-3xl overflow-hidden">
+                                <img src="firza.jpg" alt="Afirza Lucky Pradana" loading="lazy" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+                        <div class="absolute -bottom-4 -right-4 w-24 h-24 bg-white rounded-full shadow-lg flex items-center justify-center">
+                            <i class="fas fa-code text-purple-600 text-2xl"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="slide-in-right">
+                    <h3 class="text-3xl font-bold text-gray-800 mb-6">Profil Saya</h3>
+                    <p class="text-gray-600 text-lg mb-8 leading-relaxed">
+                        Lulusan Sarjana Teknik Informatika dengan pengalaman dalam pengembangan web full-stack menggunakan teknologi modern. Menguasai frontend development (HTML, CSS, JavaScript, Bootstrap) serta backend development (PHP, Node.js, MySQL).
+                    </p>
+                    <p class="text-gray-600 text-lg mb-8 leading-relaxed">
+                        Berpengalaman merancang aplikasi web responsif dan sistem informasi yang efisien. Memiliki minat tinggi terhadap teknologi terbaru dan siap memberikan kontribusi dalam tim pengembangan yang inovatif dan kolaboratif.
+                    </p>
+                    
+                    <div class="grid grid-cols-2 gap-6 mb-8">
+                        <div class="text-center p-6 bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl border border-purple-100">
+                            <h4 class="text-4xl font-bold text-purple-600 mb-2">5+</h4>
+                            <p class="text-gray-600 font-medium">Projects Completed</p>
+                        </div>
+                        <div class="text-center p-6 bg-gradient-to-br from-blue-50 to-cyan-50 rounded-2xl border border-blue-100">
+                            <h4 class="text-4xl font-bold text-blue-600 mb-2">2+</h4>
+                            <p class="text-gray-600 font-medium">Years Experience</p>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-wrap gap-3">
+                        <span class="px-4 py-2 bg-purple-100 text-purple-700 rounded-full font-medium">Web Development</span>
+                        <span class="px-4 py-2 bg-blue-100 text-blue-700 rounded-full font-medium">Full Stack</span>
+                        <span class="px-4 py-2 bg-green-100 text-green-700 rounded-full font-medium">UI/UX Design</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-800 fade-in mb-4">Technical Skills</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto fade-in"></div>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-16 max-w-6xl mx-auto">
+                <!-- Frontend Skills -->
+                <div class="slide-in-left">
+                    <div class="bg-white p-8 rounded-3xl shadow-lg">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-8 flex items-center gap-3">
+                            <i class="fas fa-laptop-code text-purple-600"></i>
+                            Frontend Development
+                        </h3>
+                        
+                        <div class="space-y-6">
+                            <div class="skill-item">
+                                <div class="flex justify-between mb-3">
+                                    <span class="text-gray-700 font-semibold">HTML & CSS</span>
+                                    <span class="text-purple-600 font-bold">95%</span>
+                                </div>
+                                <div class="bg-gray-200 rounded-full h-3">
+                                    <div class="progress-bar bg-gradient-to-r from-orange-500 to-red-500 h-3 rounded-full" data-width="95"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="skill-item">
+                                <div class="flex justify-between mb-3">
+                                    <span class="text-gray-700 font-semibold">JavaScript</span>
+                                    <span class="text-purple-600 font-bold">90%</span>
+                                </div>
+                                <div class="bg-gray-200 rounded-full h-3">
+                                    <div class="progress-bar bg-gradient-to-r from-yellow-500 to-orange-500 h-3 rounded-full" data-width="90"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="skill-item">
+                                <div class="flex justify-between mb-3">
+                                    <span class="text-gray-700 font-semibold">React.js</span>
+                                    <span class="text-purple-600 font-bold">70%</span>
+                                </div>
+                                <div class="bg-gray-200 rounded-full h-3">
+                                    <div class="progress-bar bg-gradient-to-r from-blue-500 to-cyan-500 h-3 rounded-full" data-width="85"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="skill-item">
+                                <div class="flex justify-between mb-3">
+                                    <span class="text-gray-700 font-semibold">Vue.js</span>
+                                    <span class="text-purple-600 font-bold">70%</span>
+                                </div>
+                                <div class="bg-gray-200 rounded-full h-3">
+                                    <div class="progress-bar bg-gradient-to-r from-green-500 to-teal-500 h-3 rounded-full" data-width="80"></div>
+                                </div>
+                            </div>
+
+                            <div class="skill-item">
+                                <div class="flex justify-between mb-3">
+                                    <span class="text-gray-700 font-semibold">Bootstrap & Tailwind</span>
+                                    <span class="text-purple-600 font-bold">90%</span>
+                                </div>
+                                <div class="bg-gray-200 rounded-full h-3">
+                                    <div class="progress-bar bg-gradient-to-r from-purple-500 to-pink-500 h-3 rounded-full" data-width="90"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Backend Skills -->
+                <div class="slide-in-right">
+                    <div class="bg-white p-8 rounded-3xl shadow-lg">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-8 flex items-center gap-3">
+                            <i class="fas fa-server text-blue-600"></i>
+                            Backend Development
+                        </h3>
+                        
+                        <div class="space-y-6">
+                            <div class="skill-item">
+                                <div class="flex justify-between mb-3">
+                                    <span class="text-gray-700 font-semibold">PHP</span>
+                                    <span class="text-blue-600 font-bold">90%</span>
+                                </div>
+                                <div class="bg-gray-200 rounded-full h-3">
+                                    <div class="progress-bar bg-gradient-to-r from-indigo-500 to-purple-500 h-3 rounded-full" data-width="90"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="skill-item">
+                                <div class="flex justify-between mb-3">
+                                    <span class="text-gray-700 font-semibold">Laravel</span>
+                                    <span class="text-blue-600 font-bold">85%</span>
+                                </div>
+                                <div class="bg-gray-200 rounded-full h-3">
+                                    <div class="progress-bar bg-gradient-to-r from-red-500 to-pink-500 h-3 rounded-full" data-width="85"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="skill-item">
+                                <div class="flex justify-between mb-3">
+                                    <span class="text-gray-700 font-semibold">Node.js</span>
+                                    <span class="text-blue-600 font-bold">70%</span>
+                                </div>
+                                <div class="bg-gray-200 rounded-full h-3">
+                                    <div class="progress-bar bg-gradient-to-r from-green-500 to-emerald-500 h-3 rounded-full" data-width="80"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="skill-item">
+                                <div class="flex justify-between mb-3">
+                                    <span class="text-gray-700 font-semibold">MySQL</span>
+                                    <span class="text-blue-600 font-bold">85%</span>
+                                </div>
+                                <div class="bg-gray-200 rounded-full h-3">
+                                    <div class="progress-bar bg-gradient-to-r from-blue-600 to-blue-400 h-3 rounded-full" data-width="85"></div>
+                                </div>
+                            </div>
+
+                            <div class="skill-item">
+                                <div class="flex justify-between mb-3">
+                                    <span class="text-gray-700 font-semibold">CodeIgniter</span>
+                                    <span class="text-blue-600 font-bold">70%</span>
+                                </div>
+                                <div class="bg-gray-200 rounded-full h-3">
+                                    <div class="progress-bar bg-gradient-to-r from-orange-600 to-red-600 h-3 rounded-full" data-width="80"></div>
+                                </div>
+                            </div>
+
+                            <div class="skill-item">
+                                <div class="flex justify-between mb-3">
+                                    <span class="text-gray-700 font-semibold">Python</span>
+                                    <span class="text-blue-600 font-bold">75%</span>
+                                </div>
+                                <div class="bg-gray-200 rounded-full h-3">
+                                    <div class="progress-bar bg-gradient-to-r from-yellow-500 to-blue-500 h-3 rounded-full" data-width="75"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                
+            <!-- Technologies -->
+            <div class="mt-20 fade-in">
+                <h3 class="text-2xl font-bold text-gray-800 mb-12 text-center">Technologies & Tools</h3>
+                
+                <div class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
+                    <div class="tech-icon text-center p-6 bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all">
+                        <i class="fab fa-html5 text-5xl text-orange-500 mb-4"></i>
+                        <p class="text-gray-700 font-semibold text-sm">HTML5</p>
+                    </div>
+                    <div class="tech-icon text-center p-6 bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all">
+                        <i class="fab fa-css3-alt text-5xl text-blue-500 mb-4"></i>
+                        <p class="text-gray-700 font-semibold text-sm">CSS3</p>
+                    </div>
+                    <div class="tech-icon text-center p-6 bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all">
+                        <i class="fab fa-js-square text-5xl text-yellow-500 mb-4"></i>
+                        <p class="text-gray-700 font-semibold text-sm">JavaScript</p>
+                    </div>
+                    <div class="tech-icon text-center p-6 bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all">
+                        <i class="fab fa-react text-5xl text-blue-400 mb-4"></i>
+                        <p class="text-gray-700 font-semibold text-sm">React.js</p>
+                    </div>
+                    <div class="tech-icon text-center p-6 bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all">
+                        <i class="fab fa-vuejs text-5xl text-green-500 mb-4"></i>
+                        <p class="text-gray-700 font-semibold text-sm">Vue.js</p>
+                    </div>
+                    <div class="tech-icon text-center p-6 bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all">
+                        <i class="fab fa-bootstrap text-5xl text-purple-600 mb-4"></i>
+                        <p class="text-gray-700 font-semibold text-sm">Bootstrap</p>
+                    </div>
+                    <div class="tech-icon text-center p-6 bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all">
+                        <i class="fab fa-php text-5xl text-indigo-600 mb-4"></i>
+                        <p class="text-gray-700 font-semibold text-sm">PHP</p>
+                    </div>
+                    <div class="tech-icon text-center p-6 bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all">
+                        <i class="fab fa-laravel text-5xl text-red-500 mb-4"></i>
+                        <p class="text-gray-700 font-semibold text-sm">Laravel</p>
+                    </div>
+                    <div class="tech-icon text-center p-6 bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all">
+                        <i class="fab fa-node-js text-5xl text-green-600 mb-4"></i>
+                        <p class="text-gray-700 font-semibold text-sm">Node.js</p>
+                    </div>
+                    <div class="tech-icon text-center p-6 bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all">
+                        <i class="fas fa-database text-5xl text-blue-600 mb-4"></i>
+                        <p class="text-gray-700 font-semibold text-sm">MySQL</p>
+                    </div>
+                    <div class="tech-icon text-center p-6 bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all">
+                        <i class="fab fa-python text-5xl text-yellow-600 mb-4"></i>
+                        <p class="text-gray-700 font-semibold text-sm">Python</p>
+                    </div>
+                    <div class="tech-icon text-center p-6 bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all">
+                        <i class="fab fa-git-alt text-5xl text-orange-600 mb-4"></i>
+                        <p class="text-gray-700 font-semibold text-sm">Git</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-800 fade-in mb-4">Featured Projects</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto fade-in"></div>
+                <p class="text-gray-600 text-lg mt-6 max-w-2xl mx-auto">
+                    Berikut adalah beberapa proyek yang telah saya kerjakan dengan berbagai teknologi modern
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+                <!-- Project 1 -->
+                <div class="portfolio-card scale-in">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="LMS.png" alt="Learning Management System" 
+                             class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+                            <span class="text-sm font-medium text-gray-500 uppercase tracking-wide">Web Application</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Learning Management System (LMS)</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed">
+                            Sistem pembelajaran berbasis web dengan fitur CBT, ujian acak, keamanan token sekali pakai, dan rapor online untuk monitoring nilai siswa.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">PHP</span>
+                            <span class="px-3 py-1 bg-orange-100 text-orange-700 rounded-full text-sm font-medium">MySQL</span>
+                            <span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm font-medium">Bootstrap</span>
+                        </div>
+                        <a href="https://github.com/AfirzaLucky/Learning_Management_System" target="_blank" 
+                           class="inline-flex items-center gap-2 text-purple-600 font-semibold hover:text-purple-800 transition-colors duration-200 group">
+                            <i class="fab fa-github text-xl"></i>
+                            <span>View on GitHub</span>
+                            <i class="fas fa-arrow-right text-sm group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="portfolio-card scale-in" style="animation-delay: 0.2s;">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="sosis.png" alt="Website Profil Perusahaan Sosis" 
+                             class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-3 h-3 bg-blue-500 rounded-full"></div>
+                            <span class="text-sm font-medium text-gray-500 uppercase tracking-wide">Company Website</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Website Profil Perusahaan Sosis</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed">
+                            Website profil perusahaan untuk menampilkan katalog produk dan terintegrasi dengan WhatsApp untuk mempermudah pemesanan.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-3 py-1 bg-orange-100 text-orange-700 rounded-full text-sm font-medium">HTML</span>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">CSS</span>
+                            <span class="px-3 py-1 bg-yellow-100 text-yellow-700 rounded-full text-sm font-medium">JavaScript</span>
+                        </div>
+                        <a href="https://ioi-frozen-food.vercel.app/index.html" target="_blank" 
+                           class="inline-flex items-center gap-2 text-purple-600 font-semibold hover:text-purple-800 transition-colors duration-200 group">
+                            <i class="fas fa-external-link-alt text-xl"></i>
+                            <span>View Live Site</span>
+                            <i class="fas fa-arrow-right text-sm group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="portfolio-card scale-in" style="animation-delay: 0.4s;">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="topup.png" alt="Website Top Up Store" 
+                             class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-3 h-3 bg-purple-500 rounded-full"></div>
+                            <span class="text-sm font-medium text-gray-500 uppercase tracking-wide">E-Commerce</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Website Top Up Store</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed">
+                            Platform penjualan voucher digital dengan sistem pembayaran terintegrasi dan proses transaksi yang cepat.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-3 py-1 bg-red-100 text-red-700 rounded-full text-sm font-medium">Laravel</span>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">MySQL</span>
+                            <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm font-medium">Bootstrap</span>
+                        </div>
+                        <a href="https://github.com/AfirzaLucky/TopUpin" target="_blank" 
+                           class="inline-flex items-center gap-2 text-purple-600 font-semibold hover:text-purple-800 transition-colors duration-200 group">
+                            <i class="fab fa-github text-xl"></i>
+                            <span>View on GitHub</span>
+                            <i class="fas fa-arrow-right text-sm group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="portfolio-card scale-in" style="animation-delay: 0.6s;">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="magang.png" alt="Sistem Informasi Notifikasi Pengiriman Pakan" 
+                             class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-3 h-3 bg-emerald-500 rounded-full"></div>
+                            <span class="text-sm font-medium text-gray-500 uppercase tracking-wide">Management System</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Sistem Informasi Notifikasi Pengiriman Pakan</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed">
+                            Sistem untuk mengelola pemesanan dan pengiriman pakan, dilengkapi nota, surat jalan, serta notifikasi otomatis via WhatsApp.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">PHP</span>
+                            <span class="px-3 py-1 bg-orange-100 text-orange-700 rounded-full text-sm font-medium">MySQL</span>
+                            <span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm font-medium">WhatsApp API</span>
+                        </div>
+                        <a href="https://github.com/AfirzaLucky/Surat_Jalan" target="_blank" 
+                           class="inline-flex items-center gap-2 text-purple-600 font-semibold hover:text-purple-800 transition-colors duration-200 group">
+                            <i class="fab fa-github text-xl"></i>
+                            <span>View on GitHub</span>
+                            <i class="fas fa-arrow-right text-sm group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- View More Projects Button -->
+            <div class="text-center mt-16">
+                <a href="https://github.com/AfirzaLucky" target="_blank" 
+                   class="btn-primary text-white px-8 py-4 rounded-full font-semibold inline-flex items-center gap-3 shadow-lg">
+                    <i class="fab fa-github"></i>
+                    View All Projects on GitHub
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+<section id="contact" class="py-20 bg-gray-50">
+    <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl md:text-5xl font-bold text-gray-800 fade-in mb-4">Get In Touch</h2>
+            <div class="w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto fade-in"></div>
+            <p class="text-gray-600 text-lg mt-6 max-w-2xl mx-auto">
+                Siap berkolaborasi dalam proyek yang menarik? Mari diskusikan ide Anda!
+            </p>
+        </div>
+        
+        <div class="max-w-4xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-16">
+                <!-- Contact Info -->
+                <div class="slide-in-left">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6">Mari Berkolaborasi!</h3>
+                    <p class="text-gray-600 text-lg mb-8 leading-relaxed">
+                        Saya selalu terbuka untuk peluang baru dan proyek-proyek menarik. 
+                        Mari diskusikan bagaimana kita bisa berkolaborasi untuk mewujudkan visi digital Anda.
+                    </p>
+                    
+                    <!-- Contact Details -->
+                    <div class="space-y-6 mb-10">
+                        <div class="flex items-center gap-4 p-4 bg-white rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+                            <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center">
+                                <i class="fas fa-envelope text-purple-600 text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="text-gray-500 text-sm font-medium">Email</p>
+                                <p class="text-gray-800 font-semibold">firzalucky71@gmail.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center gap-4 p-4 bg-white rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+                            <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center">
+                                <i class="fas fa-phone text-green-600 text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="text-gray-500 text-sm font-medium">Phone</p>
+                                <p class="text-gray-800 font-semibold">+62 895-3046-2960</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center gap-4 p-4 bg-white rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+                            <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
+                                <i class="fas fa-map-marker-alt text-blue-600 text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="text-gray-500 text-sm font-medium">Location</p>
+                                <p class="text-gray-800 font-semibold">Gresik, East Java, Indonesia</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Social Links -->
+                    <div class="flex gap-4 mb-8">
+                        <a href="https://www.linkedin.com/in/afirza-lucky-pradana-939751221/" target="_blank"
+                           class="w-14 h-14 bg-gradient-to-br from-blue-500 to-blue-600 text-white rounded-2xl flex items-center justify-center hover:scale-110 transform transition-all duration-300 shadow-lg hover:shadow-xl">
+                            <i class="fab fa-linkedin-in text-xl"></i>
+                        </a>
+                        <a href="https://github.com/AfirzaLucky" target="_blank"
+                           class="w-14 h-14 bg-gradient-to-br from-gray-700 to-gray-800 text-white rounded-2xl flex items-center justify-center hover:scale-110 transform transition-all duration-300 shadow-lg hover:shadow-xl">
+                            <i class="fab fa-github text-xl"></i>
+                        </a>
+                        <a href="https://www.instagram.com/firzaluckyy/" target="_blank"
+                           class="w-14 h-14 bg-gradient-to-br from-pink-500 to-purple-600 text-white rounded-2xl flex items-center justify-center hover:scale-110 transform transition-all duration-300 shadow-lg hover:shadow-xl">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                    </div>
+
+                    <!-- WhatsApp CTA -->
+                    <a href="https://wa.me/6289530462960?text=Halo%20Firza!%20Saya%20ingin%20berdiskusi%20dengan%20Anda..." 
+                       target="_blank"
+                       class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-green-500 to-green-600 text-white rounded-2xl font-semibold hover:from-green-600 hover:to-green-700 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl">
+                        <i class="fab fa-whatsapp text-2xl mr-3"></i>
+                        <div>
+                            <p class="text-sm opacity-90">Quick Chat</p>
+                            <p class="text-lg font-bold">WhatsApp Me</p>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="slide-in-right">
+                    <div class="bg-white p-8 rounded-3xl shadow-lg">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-6">Send Message</h3>
+                        <form id="contactForm" class="space-y-6">
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-gray-700 font-semibold mb-2">Nama</label>
+                                    <input type="text" 
+                                           id="nama"
+                                           name="nama"
+                                           class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all" 
+                                           placeholder="Nama Anda"
+                                           required>
+                                </div>
+                                <div>
+                                    <label class="block text-gray-700 font-semibold mb-2">Email</label>
+                                    <input type="email" 
+                                           id="email"
+                                           name="email"
+                                           class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all" 
+                                           placeholder="email@example.com"
+                                           required>
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 font-semibold mb-2">Subjek</label>
+                                <input type="text" 
+                                       id="subjek"
+                                       name="subjek"
+                                       class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all" 
+                                       placeholder="Subjek pesan"
+                                       required>
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 font-semibold mb-2">Pesan</label>
+                                <textarea rows="5" 
+                                          id="pesan"
+                                          name="pesan"
+                                          class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all resize-none" 
+                                          placeholder="Ceritakan tentang proyek atau kolaborasi yang Anda inginkan..."
+                                          required></textarea>
+                            </div>
+                            <button type="submit" 
+                                    id="submitBtn"
+                                    class="w-full btn-primary text-white px-8 py-4 rounded-xl font-semibold inline-flex items-center justify-center gap-3 shadow-lg bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 transition-all duration-300 transform hover:-translate-y-1">
+                                <i class="fas fa-paper-plane"></i>
+                                Kirim via WhatsApp
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+                <!-- Brand -->
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">
+                        <span class="text-purple-400">A</span>firza Lucky Pradana
+                    </h3>
+                    <p class="text-gray-400 leading-relaxed">
+                        Web Developer yang passionate dalam menciptakan solusi digital inovatif dan fungsional.
+                    </p>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <div class="space-y-2">
+                        <a href="#home" class="block text-gray-400 hover:text-white transition-colors">Home</a>
+                        <a href="#about" class="block text-gray-400 hover:text-white transition-colors">About</a>
+                        <a href="#skills" class="block text-gray-400 hover:text-white transition-colors">Skills</a>
+                        <a href="#portfolio" class="block text-gray-400 hover:text-white transition-colors">Portfolio</a>
+                        <a href="#contact" class="block text-gray-400 hover:text-white transition-colors">Contact</a>
+                    </div>
+                </div>
+                
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Contact Info</h4>
+                    <div class="space-y-3 text-gray-400">
+                        <p class="flex items-center gap-2">
+                            <i class="fas fa-envelope"></i>
+                            firzalucky71@gmail.com
+                        </p>
+                        <p class="flex items-center gap-2">
+                            <i class="fas fa-phone"></i>
+                            +62 895-3046-2960
+                        </p>
+                        <p class="flex items-center gap-2">
+                            <i class="fas fa-map-marker-alt"></i>
+                            Gresik, East Java, ID
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Bottom Bar -->
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 mb-4 md:mb-0">
+                    &copy; 2025 Afirza Lucky Pradana. All rights reserved.
+                </p>
+                <div class="flex gap-4">
+                    <a href="https://www.linkedin.com/in/afirza-lucky-pradana-939751221/" target="_blank"
+                       class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://github.com/AfirzaLucky" target="_blank"
+                       class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.instagram.com/firzaluckyy/" target="_blank"
+                       class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" 
+            class="fixed bottom-8 right-8 w-12 h-12 bg-purple-600 text-white rounded-full shadow-lg hover:bg-purple-700 transform hover:scale-110 transition-all duration-300 opacity-0 pointer-events-none z-50">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+// Intersection Observer untuk animasi scroll
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+        }
+    });
+}, observerOptions);
+
+// Observe semua elemen dengan class animasi
+document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right, .scale-in').forEach(el => {
+    observer.observe(el);
+});
+
+// Navbar scroll effect
+window.addEventListener('scroll', () => {
+    const navbar = document.getElementById('navbar');
+    const backToTop = document.getElementById('backToTop');
+    
+    if (window.scrollY > 100) {
+        navbar.classList.add('navbar-scroll');
+        backToTop.style.opacity = '1';
+        backToTop.style.pointerEvents = 'auto';
+    } else {
+        navbar.classList.remove('navbar-scroll');
+        backToTop.style.opacity = '0';
+        backToTop.style.pointerEvents = 'none';
+    }
+});
+
+// Back to top functionality
+document.getElementById('backToTop').addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
+
+// Smooth scroll untuk navigation links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+        
+        // Close mobile menu jika terbuka
+        document.getElementById('mobile-menu').classList.add('hidden');
+    });
+});
+
+// Mobile menu toggle
+const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+const mobileMenu = document.getElementById('mobile-menu');
+
+mobileMenuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+});
+
+// Close mobile menu saat klik di luar
+mobileMenu.addEventListener('click', (e) => {
+    if (e.target === mobileMenu) {
+        mobileMenu.classList.add('hidden');
+    }
+});
+
+// Typing animation untuk hero section
+const typedName = document.getElementById('typed-name');
+const names = ['Afirza Lucky Pradana', 'Web Developer', 'Software Engineer', 'Full Stack Developer'];
+let currentIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+
+function typeWriter() {
+    const currentName = names[currentIndex];
+    
+    if (!isDeleting) {
+        typedName.textContent = currentName.substring(0, charIndex + 1);
+        charIndex++;
+        
+        if (charIndex === currentName.length) {
+            setTimeout(() => isDeleting = true, 2000);
+        }
+    } else {
+        typedName.textContent = currentName.substring(0, charIndex - 1);
+        charIndex--;
+        
+        if (charIndex === 0) {
+            isDeleting = false;
+            currentIndex = (currentIndex + 1) % names.length;
+        }
+    }
+    
+    setTimeout(typeWriter, isDeleting ? 50 : 100);
+}
+
+// Mulai typing animation setelah 1 detik
+setTimeout(typeWriter, 1000);
+
+// Animate skill progress bars - Fixed for mobile
+const skillObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            // Cari semua progress bar dalam section yang sedang diobserve
+            const progressBars = entry.target.querySelectorAll('.progress-bar');
+            progressBars.forEach((bar, index) => {
+                setTimeout(() => {
+                    const width = bar.getAttribute('data-width');
+                    if (width) {
+                        bar.style.width = width + '%';
+                    }
+                }, index * 100); // Stagger animation untuk setiap bar
+            });
+        }
+    });
+}, { 
+    threshold: 0.2, // Lebih rendah untuk mobile
+    rootMargin: '0px 0px -50px 0px' // Trigger lebih awal
+});
+
+// Observe kedua container skill (frontend dan backend)
+document.querySelectorAll('#skills .bg-white').forEach(el => {
+    skillObserver.observe(el);
+});
+
+// Fallback: Jika observer tidak bekerja, trigger manual saat scroll ke skills section
+let skillsAnimated = false;
+window.addEventListener('scroll', () => {
+    if (!skillsAnimated) {
+        const skillsSection = document.querySelector('#skills');
+        if (skillsSection) {
+            const rect = skillsSection.getBoundingClientRect();
+            const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+            
+            if (isVisible) {
+                const progressBars = document.querySelectorAll('#skills .progress-bar');
+                progressBars.forEach((bar, index) => {
+                    setTimeout(() => {
+                        const width = bar.getAttribute('data-width');
+                        if (width) {
+                            bar.style.width = width + '%';
+                        }
+                    }, index * 150);
+                });
+                skillsAnimated = true;
+            }
+        }
+    }
+});
+
+// Enhanced WhatsApp Contact Form Handler
+document.addEventListener('DOMContentLoaded', function() {
+    // Inject additional CSS untuk progress bar animation
+    const additionalCSS = `
+        .progress-bar {
+            width: 0%;
+            transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+            will-change: width;
+        }
+        @media (max-width: 768px) {
+            .skill-item {
+                margin-bottom: 1.5rem;
+            }
+            
+            .progress-bar {
+                transition: width 1.2s ease-out;
+            }
+        }
+    `;
+    
+    const style = document.createElement('style');
+    style.textContent = additionalCSS;
+    document.head.appendChild(style);
+    
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Ambil data dari form
+            const nama = document.getElementById('nama').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const subjek = document.getElementById('subjek').value.trim();
+            const pesan = document.getElementById('pesan').value.trim();
+            
+            // Validasi form
+            if (!nama || !email || !subjek || !pesan) {
+                showNotification('Mohon lengkapi semua field!', 'error');
+                return;
+            }
+            
+            // Validasi email sederhana
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                showNotification('Format email tidak valid!', 'error');
+                return;
+            }
+            
+            // Show loading state
+            const submitBtn = document.getElementById('submitBtn') || this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Mengirim...';
+            submitBtn.disabled = true;
+            
+            // Format pesan untuk WhatsApp
+            const whatsappMessage = encodeURIComponent(
+                `Halo Firza! 👋\n\n` +
+                `*Nama:* ${nama}\n` +
+                `*Email:* ${email}\n` +
+                `*Subjek:* ${subjek}\n\n` +
+                `*Pesan:*\n${pesan}\n\n` +
+                `Saya tertarik untuk berkolaborasi dengan Anda!`
+            );
+            
+            // Nomor WhatsApp tujuan (gunakan format internasional tanpa +)
+            const phoneNumber = '6289530462960';
+            
+            // Buat URL WhatsApp
+            const whatsappURL = `https://wa.me/${phoneNumber}?text=${whatsappMessage}`;
+            
+            // Simulate processing time
+            setTimeout(() => {
+                // Redirect ke WhatsApp
+                window.open(whatsappURL, '_blank');
+                
+                // Reset form setelah sukses
+                contactForm.reset();
+                
+                // Remove validation classes
+                document.querySelectorAll('#contactForm input, #contactForm textarea').forEach(input => {
+                    input.classList.remove('border-red-400', 'border-green-400');
+                    input.parentElement.classList.remove('focused');
+                });
+                
+                // Reset textarea height
+                const textarea = document.getElementById('pesan');
+                if (textarea) {
+                    textarea.style.height = 'auto';
+                }
+                
+                // Restore button
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+                
+                // Show success message
+                showNotification('Pesan berhasil disiapkan! Anda akan diarahkan ke WhatsApp.', 'success');
+            }, 1500);
+        });
+    }
+});
+
+// Function untuk menampilkan notifikasi
+function showNotification(message, type = 'info') {
+    // Buat elemen notifikasi
+    const notification = document.createElement('div');
+    notification.className = `fixed top-4 right-4 z-50 px-6 py-4 rounded-xl shadow-lg transform translate-x-full transition-all duration-300 ${
+        type === 'success' ? 'bg-green-500 text-white' : 
+        type === 'error' ? 'bg-red-500 text-white' : 
+        'bg-blue-500 text-white'
+    }`;
+    
+    notification.innerHTML = `
+        <div class="flex items-center gap-3">
+            <i class="fas ${type === 'success' ? 'fa-check-circle' : type === 'error' ? 'fa-exclamation-circle' : 'fa-info-circle'}"></i>
+            <span>${message}</span>
+        </div>
+    `;
+    
+    document.body.appendChild(notification);
+    
+    // Animasi masuk
+    setTimeout(() => {
+        notification.classList.remove('translate-x-full');
+    }, 100);
+    
+    // Hilangkan notifikasi setelah 5 detik
+    setTimeout(() => {
+        notification.classList.add('translate-x-full');
+        setTimeout(() => {
+            if (document.body.contains(notification)) {
+                document.body.removeChild(notification);
+            }
+        }, 300);
+    }, 5000);
+}
+
+// Add active class to navigation links based on scroll position
+window.addEventListener('scroll', () => {
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-link');
+    
+    let current = '';
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if (scrollY >= (sectionTop - 200)) {
+            current = section.getAttribute('id');
+        }
+    });
+
+    navLinks.forEach(link => {
+        link.classList.remove('text-purple-600');
+        if (link.getAttribute('href') === `#${current}`) {
+            link.classList.add('text-purple-600');
+        }
+    });
+});
+
+// Animate counters in about section
+function animateCounters() {
+    const counters = document.querySelectorAll('#about h4');
+    counters.forEach(counter => {
+        const target = parseInt(counter.textContent.replace('+', ''));
+        let current = 0;
+        const increment = target / 50;
+        
+        const updateCounter = () => {
+            if (current < target) {
+                current += increment;
+                counter.textContent = Math.ceil(current) + '+';
+                requestAnimationFrame(updateCounter);
+            } else {
+                counter.textContent = target + '+';
+            }
+        };
+        
+        updateCounter();
+    });
+}
+
+// Observe about section untuk trigger counter animation
+const aboutObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            animateCounters();
+            aboutObserver.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.5 });
+
+const aboutSection = document.querySelector('#about');
+if (aboutSection) {
+    aboutObserver.observe(aboutSection);
+}
+
+// Loading screen
+window.addEventListener('load', () => {
+    document.body.classList.add('loaded');
+});
+
+// Smooth reveal untuk portfolio cards
+const portfolioCards = document.querySelectorAll('.portfolio-card');
+portfolioCards.forEach((card, index) => {
+    card.style.animationDelay = `${index * 0.2}s`;
+});
+
+// Enhanced hover effects untuk tech icons
+document.querySelectorAll('.tech-icon').forEach(icon => {
+    icon.addEventListener('mouseenter', function() {
+        this.style.transform = 'scale(1.1) translateY(-5px)';
+    });
+    
+    icon.addEventListener('mouseleave', function() {
+        this.style.transform = 'scale(1) translateY(0)';
+    });
+});
+
+// Parallax effect untuk floating elements
+window.addEventListener('scroll', () => {
+    const scrolled = window.pageYOffset;
+    const parallaxElements = document.querySelectorAll('.float-animation');
+    
+    parallaxElements.forEach((element, index) => {
+        const speed = 0.3 + (index * 0.1);
+        element.style.transform = `translateY(${scrolled * speed}px)`;
+    });
+});
+
+// Add stagger animation untuk grid items
+const observerStagger = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const children = entry.target.children;
+            Array.from(children).forEach((child, index) => {
+                setTimeout(() => {
+                    child.classList.add('active');
+                }, index * 100);
+            });
+        }
+    });
+}, { threshold: 0.2 });
+
+// Apply stagger animation to technology grid
+const techGrid = document.querySelector('#skills .grid');
+if (techGrid) {
+    observerStagger.observe(techGrid);
+}
+
+// Performance optimization - lazy load images
+const images = document.querySelectorAll('img[data-src]');
+const imageObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const img = entry.target;
+            img.src = img.dataset.src;
+            img.classList.remove('lazy');
+            imageObserver.unobserve(img);
+        }
+    });
+});
+
+images.forEach(img => imageObserver.observe(img));
+
+// Add smooth transitions for all hover effects
+document.addEventListener('DOMContentLoaded', () => {
+    // Add loaded class to body for CSS transitions
+    setTimeout(() => {
+        document.body.classList.add('loaded');
+    }, 100);
+    
+    // Initialize AOS (Animate On Scroll) alternative
+    const animatedElements = document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right, .scale-in');
+    
+    const intersectionCallback = (entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+            }
+        });
+    };
+
+    const intersectionObserver = new IntersectionObserver(intersectionCallback, {
+        rootMargin: '0px 0px -100px 0px',
+        threshold: 0.1
+    });
+
+    animatedElements.forEach(element => {
+        intersectionObserver.observe(element);
+    });
+
+    // Tambahkan validasi real-time untuk contact form
+    document.querySelectorAll('#contactForm input, #contactForm textarea').forEach(input => {
+        input.addEventListener('input', function() {
+            // Remove previous validation classes
+            this.classList.remove('border-red-400', 'border-green-400');
+            
+            // Add validation styling
+            if (this.value.trim()) {
+                if (this.type === 'email') {
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (emailRegex.test(this.value)) {
+                        this.classList.add('border-green-400');
+                    } else {
+                        this.classList.add('border-red-400');
+                    }
+                } else {
+                    this.classList.add('border-green-400');
+                }
+            }
+        });
+        
+        // Floating label effect
+        input.addEventListener('focus', function() {
+            this.parentElement.classList.add('focused');
+        });
+        
+        input.addEventListener('blur', function() {
+            if (!this.value.trim()) {
+                this.parentElement.classList.remove('focused');
+            }
+        });
+    });
+
+    // Auto-resize textarea
+    const textarea = document.getElementById('pesan');
+    if (textarea) {
+        textarea.addEventListener('input', function() {
+            this.style.height = 'auto';
+            this.style.height = this.scrollHeight + 'px';
+        });
+    }
+});
+
+// Custom cursor effect (optional)
+let cursor = {
+    x: 0,
+    y: 0
+};
+
+document.addEventListener('mousemove', (e) => {
+    cursor.x = e.clientX;
+    cursor.y = e.clientY;
+});
+
+// Smooth scroll polyfill for older browsers
+if (!('scrollBehavior' in document.documentElement.style)) {
+    const smoothScrollPolyfill = document.createElement('script');
+    smoothScrollPolyfill.src = 'https://cdn.jsdelivr.net/gh/iamdustan/smoothscroll@master/src/smoothscroll.js';
+    document.head.appendChild(smoothScrollPolyfill);
+}
+
+// Error handling untuk external links
+document.querySelectorAll('a[target="_blank"]').forEach(link => {
+    link.addEventListener('click', (e) => {
+        try {
+            // Track external link clicks if analytics is available
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'click', {
+                    event_category: 'external_link',
+                    event_label: link.href
+                });
+            }
+        } catch (error) {
+            console.log('Analytics tracking failed:', error);
+        }
+    });
+});
+
+// Preload critical images
+const criticalImages = [
+    'firza.jpg',
+    'LMS.png',
+    'sosis.png',
+    'topup.png',
+    'magang.png'
+];
+
+criticalImages.forEach(src => {
+    const img = new Image();
+    img.src = src;
+});
+
+// Service Worker registration for PWA capabilities (optional)
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js')
+            .then(registration => {
+                console.log('SW registered: ', registration);
+            })
+            .catch(registrationError => {
+                console.log('SW registration failed: ', registrationError);
+            });
+    });
+}
+
+// Dark mode toggle (optional feature)
+const darkModeToggle = document.createElement('button');
+darkModeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+darkModeToggle.className = 'fixed top-4 right-4 w-12 h-12 bg-white shadow-lg rounded-full flex items-center justify-center text-gray-600 hover:text-purple-600 transition-colors z-40';
+darkModeToggle.style.display = 'none'; // Hidden by default, can be enabled
+
+darkModeToggle.addEventListener('click', () => {
+    document.body.classList.toggle('dark');
+    const isDark = document.body.classList.contains('dark');
+    darkModeToggle.innerHTML = isDark ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+    localStorage.setItem('darkMode', isDark);
+});
+
+// Check for saved dark mode preference
+if (localStorage.getItem('darkMode') === 'true') {
+    document.body.classList.add('dark');
+    darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+}
+
+// Accessibility improvements
+document.addEventListener('keydown', (e) => {
+    // Skip to main content on Tab key
+    if (e.key === 'Tab' && !e.shiftKey) {
+        const focusableElements = document.querySelectorAll(
+            'a, button, input, textarea, select, [tabindex]:not([tabindex="-1"])'
+        );
+        
+        if (document.activeElement === document.body) {
+            e.preventDefault();
+            focusableElements[0].focus();
+        }
+    }
+    
+    // Close mobile menu on Escape
+    if (e.key === 'Escape') {
+        document.getElementById('mobile-menu').classList.add('hidden');
+    }
+});
+
+// Performance monitoring
+if ('performance' in window) {
+    window.addEventListener('load', () => {
+        setTimeout(() => {
+            const perfData = performance.getEntriesByType('navigation')[0];
+            console.log('Page load time:', perfData.loadEventEnd - perfData.loadEventStart);
+        }, 0);
+    });
+}
+
+// Initialize everything when DOM is fully loaded
+document.addEventListener('DOMContentLoaded', () => {
+    // Initialize scroll-triggered animations
+    const scrollElements = document.querySelectorAll('.js-scroll');
+    const elementInView = (el, dividend = 1) => {
+        const elementTop = el.getBoundingClientRect().top;
+        return (
+            elementTop <= 
+            (window.innerHeight || document.documentElement.clientHeight) / dividend
+        );
+    };
+    
+    scrollElements.forEach((el, index) => {
+        if (elementInView(el, 1.25)) {
+            el.classList.add('scrolled');
+        }
+    });
+    
+    // Handle scroll events with throttling for performance
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+        if (!ticking) {
+            requestAnimationFrame(() => {
+                scrollElements.forEach((el) => {
+                    if (elementInView(el, 1.25)) {
+                        el.classList.add('scrolled');
+                    }
+                });
+                ticking = false;
+            });
+            ticking = true;
+        }
+    });
+});
+
+// Add resize handler for responsive adjustments
+window.addEventListener('resize', debounce(() => {
+    // Handle responsive breakpoint changes
+    const isMobile = window.innerWidth < 768;
+    const navbar = document.getElementById('navbar');
+    
+    if (!isMobile) {
+        document.getElementById('mobile-menu').classList.add('hidden');
+    }
+    
+    // Recalculate animations on resize
+    observer.disconnect();
+    document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right, .scale-in').forEach(el => {
+        observer.observe(el);
+    });
+}, 250));
+
+// Debounce function for performance
+function debounce(func, wait, immediate) {
+    let timeout;
+    return function executedFunction(...args) {
+        const later = () => {
+            timeout = null;
+            if (!immediate) func(...args);
+        };
+        const callNow = immediate && !timeout;
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+        if (callNow) func(...args);
+    };
+}
+
+// Analytics and tracking setup (if needed)
+function trackEvent(category, action, label) {
+    if (typeof gtag !== 'undefined') {
+        gtag('event', action, {
+            event_category: category,
+            event_label: label
+        });
+    }
+}
+
+// Track important interactions
+document.querySelectorAll('.portfolio-card a').forEach(link => {
+    link.addEventListener('click', () => {
+        trackEvent('portfolio', 'project_click', link.href);
+    });
+});
+
+document.querySelectorAll('.btn-primary').forEach(button => {
+    button.addEventListener('click', () => {
+        trackEvent('cta', 'button_click', button.textContent.trim());
+    });
+});
+    </script>
+</body>
+</html>
